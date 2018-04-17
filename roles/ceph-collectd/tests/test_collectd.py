@@ -1,4 +1,4 @@
-testinfra_hosts = ['!ceph-grafana']
+testinfra_hosts = ['!ceph_grafana']
 
 
 class TestCollectd(object):
