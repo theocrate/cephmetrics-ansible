@@ -1,9 +1,9 @@
 ---
 - hosts:
-  - ceph_grafana
+  - ceph-grafana
   become: true
   roles:
-  - ceph_grafana
+  - ceph-grafana
 
 - hosts:
   # These are roles used by ceph-ansible
