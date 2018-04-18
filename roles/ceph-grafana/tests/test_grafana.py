@@ -2,7 +2,7 @@ import json
 import os
 import pytest
 
-testinfra_hosts = ['ceph_grafana']
+testinfra_hosts = ['ceph-grafana']
 
 
 class TestGrafana(object):
