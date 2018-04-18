@@ -1,7 +1,7 @@
 ---
 - name: purge grafana host
   hosts:
-    - ceph_grafana
+    - ceph-grafana
   become: true
   tasks:
   - name: Stop and disable services
