@@ -29,7 +29,7 @@
   replace:
     dest: "{{ collectd_conf_d }}/write_graphite.conf"
     regexp: 'Host ".*"'
-    replace: "Host \"{{ groups['ceph_grafana'][0] }}\""
+    replace: "Host \"{{ groups['ceph-grafana'][0] }}\""
   notify: Restart collectd
 
 - name: Set cluster name in cephmetrics.conf
@@ -44,7 +44,7 @@
     dest: "{{ collectd_conf_d }}/cephmetrics.conf"
     regexp: 'EventURL ".*"'
     insertafter: 'ClusterName ".*"'
-    line: "        EventURL \"http://{{ groups['ceph_grafana'][0] }}:{{ graphite.web_port if graphite.service == 'graphite-web' else graphite.api_port }}/events/\""
+    line: "        EventURL \"http://{{ groups['ceph-grafana'][0] }}:{{ graphite.web_port if graphite.service == 'graphite-web' else graphite.api_port }}/events/\""
   notify: Restart collectd
 
 - name: Set ModulePath in cephmetrics.conf
